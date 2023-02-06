@@ -1,0 +1,7 @@
+{
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "singleQutoe": true,
+    "bracketSameLine": true,
+    "arrowParens": "always"
+}
