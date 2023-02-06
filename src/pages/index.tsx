@@ -14,8 +14,8 @@ export default function Home() {
       >
         <section className={CONTAINER}>
           <div className="text-center py-10">
-            <h1 className="text-3xl font-semibold">Trivia App</h1>
-            <h2 className='text-xl tex-gray-500 font-medium'>Built with Next.js</h2>
+            <h1 className="text-3xl font-bold">Trivia App</h1>
+            <h2 className="text-xl text-gray-500 font-medium">Built with Next.js</h2>
           </div>
         </section>
       </Layout>
