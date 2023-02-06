@@ -16,24 +16,24 @@ const Layout: React.FC<LayoutProps> = ({
             <Head>
                 <title>{title}</title>
                 <link
-                    rel ="apple-touch-icon"
+                    rel="apple-touch-icon"
                     sizes="180x180"
-                    href="/public/logos/favicon/apple-touch-icon (2).png"
+                    href="/favicon/apple-touch-icon.png"
                 />
                 <link
-                    rel ="icon"
+                    rel="icon"
                     type="image/png"
                     sizes="32x32"
-                    href="/public/logos/favicon/favicon-32x32 (2).png"
+                    href="/favicon/favicon-32x32.png"
                 />
                 <link
-                    rel ="icon"
+                    rel="icon"
                     type="image/png"
                     sizes="16x16"
-                    href="/public/logos/favicon/favicon-16x16 (2).png"
+                    href="/favicon/favicon-16x16.png"
                 />
-                <link rel="icon" href="/public/logos/favicon/favicon.ico" />
-                <link rel="manifest" href="/favicon/site (2).webmanifest" />
+                <link rel="icon" href="/favicon/favicon.ico" />
+                <link rel="manifest" href="/favicon/site.webmanifest" />
                 <meta name="description" content="Trivia" />
                 <meta property="og:site_name" content={title} />
                 <meta property="og:title" content={title} />
