@@ -1,15 +1,15 @@
 // imports here (Nav, Footer, hooks)
-import Head from 'next/head'
+import Head from 'next/head';
 
 type LayoutProps = React.PropsWithChildren<{
     title?: string;
     description?: string;
-}>
+}>;
 
 const Layout: React.FC<LayoutProps> = ({
     children,
     title = 'Trivia',
-    description = 'TV Trivia'
+    description = 'TV Trivia',
 }) => {
     return (
         <div className="container">
@@ -43,7 +43,7 @@ const Layout: React.FC<LayoutProps> = ({
             <main>{children}</main>
             {/* <Footer /> */}
         </div>
-    )
-}
+    );
+};
 
-export default Layout
+export default Layout;

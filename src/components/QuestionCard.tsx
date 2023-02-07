@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 type Props = {
     question: string;
@@ -7,30 +7,42 @@ type Props = {
     userAnswer: any;
     questionNr: number;
     totalQuestions: number;
-}
+};
 
-const QuestionCard: React.FC<Props> = ({ question, answers, callback, userAnswer, questionNr, totalQuestions}) => {
-  return (
-    <div>
-        <p className="number">
-            Question: {questionNr} / {totalQuestions} 
-        </p>
-        <p dangerouslySetInnerHTML={{ __html: question }}></p>
+const QuestionCard: React.FC<Props> = ({
+    question,
+    answers,
+    callback,
+    userAnswer,
+    questionNr,
+    totalQuestions,
+}) => {
+    return (
         <div>
-            {answers.map(answer => (
-                <div 
-                    key={answer}
-                    // correct={userAnswer?.correctAnswer === answer}
-                    // userClicked={userAnswer?.answer === answer}
-                >
-                    <button disabled={!!userAnswer} value={answer} onClick={callback}>
-                        <span dangerouslySetInnerHTML={{ __html: answer}} />
-                    </button>
-                </div>
-            ))}
+            <p className="number">
+                Question: {questionNr} / {totalQuestions}
+            </p>
+            <p dangerouslySetInnerHTML={{ __html: question }}></p>
+            <div>
+                {answers.map((answer) => (
+                    <div
+                        key={answer}
+                        // correct={userAnswer?.correctAnswer === answer}
+                        // userClicked={userAnswer?.answer === answer}
+                    >
+                        <button
+                            disabled={!!userAnswer}
+                            value={answer}
+                            onClick={callback}>
+                            <span
+                                dangerouslySetInnerHTML={{ __html: answer }}
+                            />
+                        </button>
+                    </div>
+                ))}
+            </div>
         </div>
-    </div>
-  )
-}
+    );
+};
 
-export default QuestionCard
+export default QuestionCard;
