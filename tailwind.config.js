@@ -5,11 +5,7 @@ module.exports = {
         "./src/utils/index.ts",
     ],
     theme: {
-        extend: {
-            backgroundImage: {
-                "textured-gray": "url('/src/images/textured-gray.jpg')",
-            },
-        },
+        extend: {},
     },
     variants: {
         extend: {},

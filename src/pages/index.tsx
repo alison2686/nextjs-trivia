@@ -55,7 +55,7 @@ export default function Home() {
             const answer = e.currentTarget.value;
             // Check answer against the correct answer
             const correct = questions[number].correct_answer === answer;
-            // Add score if answer is correct
+            // Add point to score if answer is correct
             if (correct) setScore((prev) => prev + 1);
             // Save answer in the array for user answers
             const answerObject = {

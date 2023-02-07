@@ -11,6 +11,13 @@ type Props = {
     totalQuestions: number;
 };
 
+type ButtonWrapperProps = {
+    correct: boolean;
+    userClicked: boolean;
+};
+
+const TwButton: React.FC<ButtonWrapperProps> = () => <div>Question</div>;
+
 const QuestionCard: React.FC<Props> = ({
     question,
     answers,
@@ -20,7 +27,7 @@ const QuestionCard: React.FC<Props> = ({
     totalQuestions,
 }) => {
     return (
-        <div>
+        <div className="bg-[#ebfeff] border-2 border-[#0085a3] rounded-md p-5 shadow-lg">
             <p className="number">
                 Question: {questionNr} / {totalQuestions}
             </p>
@@ -28,6 +35,7 @@ const QuestionCard: React.FC<Props> = ({
             <div>
                 {answers.map((answer) => (
                     <div
+                        className="my-2"
                         key={answer}
                         // correct={userAnswer?.correctAnswer === answer}
                         // userClicked={userAnswer?.answer === answer}
