@@ -8,10 +8,10 @@ import { fetchQuizQuestions } from "@/api/API";
 //TYPES
 import { QuestionState, Difficulty } from "@/api/API";
 
-type AnswerObject = {
+export type AnswerObject = {
     question: string;
     answer: string;
-    corret: boolean;
+    correct: boolean;
     correctAnswer: string;
 };
 
@@ -49,14 +49,41 @@ export default function Home() {
         }
     };
 
-    const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {};
+    const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
+        if (!gameOver) {
+            //User answer
+            const answer = e.currentTarget.value;
+            // Check answer against the correct answer
+            const correct = questions[number].correct_answers === answer;
+            // Add score if answer is correct
+            if (correct) setScore((prev) => prev + 1);
+            // Save answer in the array for user answers
+            const answerObject = {
+                question: questions[number].question,
+                answer,
+                correct,
+                correctAnswer: questions[number].correct_answers,
+            };
+            setUserAnswers((prev) => [...prev, answerObject]);
+        }
+    };
 
-    const nextQuestion = () => {};
+    const nextQuestion = () => {
+        // Move on to the next Question if nor the last question
+        const nextQuestion = number + 1;
+
+        if (nextQuestion === TOTAL_QUESTIONS) {
+            setGameOver(true);
+        } else {
+            setNumber(nextQuestion);
+        }
+    };
+
     return (
         <Layout title="Trivia | Home" description="Test your trivia knowledge">
             <section className={CONTAINER}>
                 <div className="text-center py-10">
-                    <h1 className="text-3xl font-bold">Trivia App</h1>
+                    <h1 className="text-3xl font-semibold ">Trivia App</h1>
                     <h2 className="text-xl text-gray-500 font-medium">
                         Built with Next.js
                     </h2>
@@ -67,7 +94,7 @@ export default function Home() {
                             Start
                         </button>
                     ) : null}
-                    {!gameOver ? <p className="score">Score:</p> : null}
+                    {!gameOver ? <p className="score">Score: {score}</p> : null}
                     {loading && <p>Loading Questions</p>}
                     {!loading && !gameOver && (
                         <QuestionCard
@@ -81,12 +108,16 @@ export default function Home() {
                             callback={checkAnswer}
                         />
                     )}
-
-                    <button
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                        onClick={nextQuestion}>
-                        Next Question
-                    </button>
+                    {!gameOver &&
+                    !loading &&
+                    userAnswers.length === number + 1 &&
+                    number !== TOTAL_QUESTIONS - 1 ? (
+                        <button
+                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                            onClick={nextQuestion}>
+                            Next Question
+                        </button>
+                    ) : null}
                 </div>
             </section>
         </Layout>

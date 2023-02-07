@@ -1,10 +1,12 @@
 import React from "react";
+//Types
+import { AnswerObject } from "@/pages";
 
 type Props = {
     question: string;
     answers: string[];
-    callback: any;
-    userAnswer: any;
+    callback: (e: React.MouseEvent<HTMLButtonElement>) => void;
+    userAnswer: AnswerObject | undefined;
     questionNr: number;
     totalQuestions: number;
 };
