@@ -7,9 +7,9 @@ export type Question = {
 };
 
 export enum Difficulty {
-    EASY = 'easy',
-    MEDIUM = 'medium',
-    HARD = 'hard',
+    EASY = "easy",
+    MEDIUM = "medium",
+    HARD = "hard",
 }
 
 export const fetchQuizQuestions = async (

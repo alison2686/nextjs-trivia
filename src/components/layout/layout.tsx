@@ -1,5 +1,5 @@
 // imports here (Nav, Footer, hooks)
-import Head from 'next/head';
+import Head from "next/head";
 
 type LayoutProps = React.PropsWithChildren<{
     title?: string;
@@ -8,8 +8,8 @@ type LayoutProps = React.PropsWithChildren<{
 
 const Layout: React.FC<LayoutProps> = ({
     children,
-    title = 'Trivia',
-    description = 'TV Trivia',
+    title = "Trivia",
+    description = "TV Trivia",
 }) => {
     return (
         <div className="container">

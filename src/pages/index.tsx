@@ -1,16 +1,16 @@
-import { useState } from 'react';
-import { Inter } from '@next/font/google';
-import Layout from '@/components/layout/layout';
-import styles from '@/styles/Home.module.css';
-import { CONTAINER } from '../utils';
-import QuestionCard from '@/components/QuestionCard';
-import { fetchQuizQuestions } from '@/api/API';
+import { useState } from "react";
+import { Inter } from "@next/font/google";
+import Layout from "@/components/layout/layout";
+import styles from "@/styles/Home.module.css";
+import { CONTAINER } from "../utils";
+import QuestionCard from "@/components/QuestionCard";
+import { fetchQuizQuestions } from "@/api/API";
 //TYPES
-import { Difficulty } from '@/api/API';
+import { Difficulty } from "@/api/API";
 
 const TOTAL_QUESTIONS = 10;
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
     const [loading, setLoading] = useState(false);
