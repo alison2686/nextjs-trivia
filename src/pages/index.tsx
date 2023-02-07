@@ -60,21 +60,28 @@ export default function Home() {
                     <h2 className="text-xl text-gray-500 font-medium">
                         Built with Next.js
                     </h2>
-                    <button
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                        onClick={startTrivia}>
-                        Start
-                    </button>
-                    <p className="score">Score</p>
-                    <p>Loading Questions</p>
-                    {/* <QuestionCard
-              questionNr={number + 1}
-              totalQuestions={TOTAL_QUESTIONS}
-              question={questions[number].question}
-              answers={questions[number].answers}
-              userAnswer={userAnswers ? userAnswers[number] : undefined}
-              callback={checkAnswer}
-            /> */}
+                    {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
+                        <button
+                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                            onClick={startTrivia}>
+                            Start
+                        </button>
+                    ) : null}
+                    {!gameOver ? <p className="score">Score:</p> : null}
+                    {loading && <p>Loading Questions</p>}
+                    {!loading && !gameOver && (
+                        <QuestionCard
+                            questionNr={number + 1}
+                            totalQuestions={TOTAL_QUESTIONS}
+                            question={questions[number].question}
+                            answers={questions[number].answers}
+                            userAnswer={
+                                userAnswers ? userAnswers[number] : undefined
+                            }
+                            callback={checkAnswer}
+                        />
+                    )}
+
                     <button
                         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                         onClick={nextQuestion}>
