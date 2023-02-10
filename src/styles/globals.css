@@ -16,7 +16,7 @@ body {
 
 body {
     color: rgb(var(--foreground-rgb));
-    background-image: url("../images/textured-gray.jpg");
+    background-image: url("../images/weather_background.jpg");
     background-size: cover;
 }
 
