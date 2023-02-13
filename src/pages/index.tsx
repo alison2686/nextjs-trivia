@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Inter } from "@next/font/google";
+// import { Inter } from "@next/font/google";
 import Layout from "@/components/layout/layout";
-import styles from "@/styles/Home.module.css";
+// import styles from "@/styles/Home.module.css";
 import { CONTAINER } from "../utils";
 import QuestionCard from "@/components/QuestionCard";
 import { fetchQuizQuestions } from "@/api/API";
@@ -17,7 +17,7 @@ export type AnswerObject = {
 
 const TOTAL_QUESTIONS = 10;
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
     const [loading, setLoading] = useState(false);
@@ -83,9 +83,11 @@ export default function Home() {
         <Layout title="Trivia | Home" description="Test your trivia knowledge">
             <section className={CONTAINER}>
                 <div className="text-center py-10">
-                    <h1 className="text-3xl font-semibold ">Trivia App</h1>
+                    <h1 className="text-3xl font-semibold ">
+                        Trivia Challenge
+                    </h1>
                     <h2 className="text-xl text-gray-500 font-medium">
-                        Built with Next.js
+                        Test your trivia knowledge!
                     </h2>
                     {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
                         <button

@@ -1,5 +1,4 @@
-export const CONTAINER =
-    "max-w-screen-xl mx-auto px-2 lg:px-8 flex items-center justify-center h-screen";
+export const CONTAINER = "flex items-center justify-center h-screen w-screen";
 
 export const shuffleArray = (array: any[]) =>
     [...array].sort(() => Math.random() - 0.5);
