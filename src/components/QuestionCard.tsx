@@ -27,11 +27,11 @@ const QuestionCard: React.FC<Props> = ({
     totalQuestions,
 }) => {
     return (
-        <div className="bg-[#ebfeff] border-2 border-[#0085a3] rounded-md p-5 shadow-lg">
+        <div className="bg-[#ebfeff] border-2 border-[#0085a3] rounded-md p-5 shadow-lg h-fit">
             <p className="number">
                 Question: {questionNr} / {totalQuestions}
             </p>
-            <p>{question}</p>
+            <p dangerouslySetInnerHTML={{ __html: question }}></p>
             <div>
                 {answers.map((answer) => (
                     <div
