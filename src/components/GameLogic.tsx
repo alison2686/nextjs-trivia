@@ -92,7 +92,11 @@ const GameLogic = () => {
                             Start
                         </button>
                     ) : null}
-                    {!gameOver ? <p className="score">Score: {score}</p> : null}
+                    {!gameOver ? (
+                        <p className="text-xl font-semibold my-5">
+                            Score: {score}
+                        </p>
+                    ) : null}
                     {loading && <p>Loading Questions</p>}
                     {!loading && !gameOver && (
                         <QuestionCard
@@ -111,7 +115,7 @@ const GameLogic = () => {
                     userAnswers.length === number + 1 &&
                     number !== TOTAL_QUESTIONS - 1 ? (
                         <button
-                            className="bg-[#ebfeff] border-2 border-[#0085a3] hover:bg-blue-700 font-bold py-2 px-4 rounded m-3"
+                            className="bg-[#ebfeff] border-2 border-[#0085a3] hover:bg-blue-700 hover:text-white font-bold py-2 px-4 rounded m-3"
                             onClick={nextQuestion}>
                             Next Question
                         </button>
