@@ -1,7 +1,5 @@
 import { useState } from "react";
-// import { Inter } from "@next/font/google";
 import Layout from "@/components/layout/layout";
-// import styles from "@/styles/Home.module.css";
 import { CONTAINER } from "../utils";
 import QuestionCard from "@/components/QuestionCard";
 import { fetchQuizQuestions } from "@/api/API";
@@ -16,8 +14,6 @@ export type AnswerObject = {
 };
 
 const TOTAL_QUESTIONS = 10;
-
-// const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
     const [loading, setLoading] = useState(false);
@@ -69,7 +65,7 @@ export default function Home() {
     };
 
     const nextQuestion = () => {
-        // Move on to the next Question if nor the last question
+        // Move on to the next Question if not the last question
         const nextQuestion = number + 1;
 
         if (nextQuestion === TOTAL_QUESTIONS) {

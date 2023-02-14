@@ -1,3 +1,16 @@
-## Trivia App
+# Trivia Challenge
 
-Built with Next.js
+## Test your trivia knowledge with this app built with Next.js, React, TypeScript and Tailwind CSS.
+
+### Link
+
+[Trivia Challenge](https://nextjs-trivia-challenge.vercel.app/)
+
+## Front-end
+
+-   React version: 8.2.0
+-   Next version: 13.1.6
+
+## Trivia Question API
+
+-   [Open Trivia Database](https://opentdb.com/)
