@@ -79,15 +79,15 @@ const GameLogic = () => {
         <Layout title="Trivia | Home" description="Test your trivia knowledge">
             <section className={CONTAINER}>
                 <div className="text-center py-10">
-                    <h1 className="text-3xl font-semibold ">
+                    <h1 className="text-3xl font-semibold my-2">
                         Trivia Challenge
                     </h1>
-                    <h2 className="text-xl text-gray-500 font-medium">
+                    <h2 className="text-xl text-gray-500 font-medium my-2">
                         Test your trivia knowledge!
                     </h2>
                     {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
                         <button
-                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-5"
                             onClick={startTrivia}>
                             Start
                         </button>
@@ -111,7 +111,7 @@ const GameLogic = () => {
                     userAnswers.length === number + 1 &&
                     number !== TOTAL_QUESTIONS - 1 ? (
                         <button
-                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-3"
+                            className="bg-[#ebfeff] border-2 border-[#0085a3] hover:bg-blue-700 font-bold py-2 px-4 rounded m-3"
                             onClick={nextQuestion}>
                             Next Question
                         </button>

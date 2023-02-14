@@ -5,7 +5,12 @@ module.exports = {
         "./src/utils/index.ts",
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                dosis: ["Dosis", "sans-serif"],
+                lobster: ["Lobster Two", "cursive"],
+            },
+        },
     },
     variants: {
         extend: {},
