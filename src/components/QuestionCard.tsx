@@ -1,6 +1,6 @@
 import React from "react";
 //Types
-import { AnswerObject } from "@/pages";
+import { AnswerObject } from "../components/GameLogic";
 
 type Props = {
     question: string;
