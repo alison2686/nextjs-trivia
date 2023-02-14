@@ -66,10 +66,10 @@ export const ButtonWrapper = styled.div<ButtonWrapperProps>`
     button {
         background: ${({ correct, userClicked }) =>
             correct
-                ? "#28df4d"
+                ? "#17B169"
                 : !correct && userClicked
                 ? "#ff5656"
-                : "#2196f3"};
+                : "#102F70"};
     }
 `;
 
