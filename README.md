@@ -4,7 +4,8 @@
 
 ### Link
 
-[Trivia Challenge](https://nextjs-trivia-challenge.vercel.app/)
+[![Trivia Challenge](src/images/trivia.png)](https://nextjs-trivia-challenge.vercel.app/)
+[https://nextjs-trivia-challenge.vercel.app](https://nextjs-trivia-challenge.vercel.app/)
 
 ## Front-end
 
