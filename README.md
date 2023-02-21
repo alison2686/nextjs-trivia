@@ -1,8 +1,8 @@
 # Trivia Challenge
 
-## Test your trivia knowledge with this app built with Next.js, React, TypeScript and Tailwind CSS.
+### Test your trivia knowledge with this app built with Next.js, React, TypeScript and Tailwind CSS.
 
-### Link
+### Demo
 
 [![Trivia Challenge](src/images/trivia.png)](https://nextjs-trivia-challenge.vercel.app/)
 [https://nextjs-trivia-challenge.vercel.app](https://nextjs-trivia-challenge.vercel.app/)
