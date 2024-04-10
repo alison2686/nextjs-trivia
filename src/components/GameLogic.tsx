@@ -79,10 +79,10 @@ const GameLogic = () => {
         <Layout title="Trivia | Home" description="Test your trivia knowledge">
             <section className={CONTAINER}>
                 <div className="text-center py-10">
-                    <h1 className="text-3xl font-semibold my-2">
-                        Trivia Challenge
+                    <h1 className="text-4xl font-bold text-center mb-4">
+                        TV Trivia Challenge
                     </h1>
-                    <h2 className="text-xl text-gray-500 font-medium my-2">
+                    <h2 className="text-xl text-gray-600 text-center mb-8">
                         Test your trivia knowledge!
                     </h2>
                     {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
