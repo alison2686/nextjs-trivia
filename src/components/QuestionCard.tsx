@@ -17,6 +17,14 @@ type ButtonWrapperProps = {
     userClicked: boolean;
 };
 
+type DecodeHtmlEntities = (html: string) => string;
+
+const decodeHtmlEntities: DecodeHtmlEntities = (html) => {
+    const txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+};
+
 const QuestionCard: React.FC<Props> = ({
     question,
     answers,
@@ -25,16 +33,18 @@ const QuestionCard: React.FC<Props> = ({
     questionNr,
     totalQuestions,
 }) => {
+    const decodedQuestion = decodeHtmlEntities(question)
+
     return (
         <div className="bg-[#ebfeff] border-2 border-[#0085a3] rounded-md p-5 shadow-lg h-fit">
             <p className="text-xl text-black">
                 Question: {questionNr} / {totalQuestions}
             </p>
-            <p
-                className="text-xl text-black my-2"
-                dangerouslySetInnerHTML={{ __html: question }}></p>
+            <p className="text-xl text-black my-2">{decodedQuestion}</p>
             <div className="my-5">
-                {answers.map((answer) => (
+                {answers.map((answer) => {
+                    const decodedAnswer = decodeHtmlEntities(answer)
+                    return (
                     <ButtonWrapper
                         className="my-2"
                         key={answer}
@@ -45,12 +55,11 @@ const QuestionCard: React.FC<Props> = ({
                             disabled={!!userAnswer}
                             value={answer}
                             onClick={callback}>
-                            <span
-                                dangerouslySetInnerHTML={{ __html: answer }}
-                            />
+                            {decodedAnswer}
                         </button>
                     </ButtonWrapper>
-                ))}
+                )
+                })}
             </div>
         </div>
     );
